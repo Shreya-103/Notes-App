@@ -6,10 +6,6 @@ function App() {
   const [content, addContent] = useState('');
   const [task, addTask] = useState([]);
 
-  // if(title=='' && content==""){
-  //   button.disabled;
-  // }
-
   const submitHandler = (e)=>{
     e.preventDefault();
     

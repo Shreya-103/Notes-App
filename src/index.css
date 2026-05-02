@@ -62,13 +62,15 @@ button:active{
 }
 
 .card{
-  height: 13rem;
+  max-height: 15rem;
   width: 10rem;
+  overflow-y: auto;
+  overflow-x: hidden;
   border-radius: 12px;
   background-color: white;
   padding: 1.2rem;
-  box-shadow: 0 0 40px inset(white white);
   position: relative;
+  min-width: 0; 
 }
 .card h5{
   position: absolute;
@@ -81,13 +83,20 @@ button:active{
 .card h5:active{
   transform: scale(1.09);
 }
+.card p, .card h3{
+  word-break: break-all;      /* 🔥 strongest breaking */
+  overflow-wrap: anywhere;    /* modern fix */
+}
 .card h3{
   font-size: 1.5rem;
+  /* word-wrap: break-word; */
 }
 .card p{
   margin-top: 1rem;
   font-size: 1.2rem;
   color: grey;
+  white-space: pre-wrap;
+  line-height: 1.5; 
 }
 @media(max-width:1000px){
   .container{
