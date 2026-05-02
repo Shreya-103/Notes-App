@@ -98,20 +98,19 @@ button:active{
   white-space: pre-wrap;
   line-height: 1.5; 
 }
-@media(max-width:1000px){
+@media(max-width:950px){
   body{
-    overflow-y: hidden;
     overflow-x: hidden;
   }
   .container{
     display: block;
-    overflow-y: hidden;
+    overflow-x: hidden;
   }
   form{
     width: 100%;
     margin: 0.8rem;
   }
-  input, textarea{
+  /* input, textarea{
     width: 70%;
     display: inline;
   }
@@ -120,7 +119,7 @@ button:active{
   }
   textarea{
     font-size: 1rem;
-  }
+  } */
   .card-holder{
     width: 100%;
   }
