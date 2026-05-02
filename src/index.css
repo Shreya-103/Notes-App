@@ -99,15 +99,27 @@ button:active{
   line-height: 1.5; 
 }
 @media(max-width:1000px){
+  body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
   .container{
     display: block;
+    overflow-y: hidden;
   }
   form{
     width: 100%;
     margin: 0.8rem;
   }
   input, textarea{
-    width: 100%;
+    width: 70%;
+    display: inline;
+  }
+  input{
+    font-size: 1.5rem;
+  }
+  textarea{
+    font-size: 1rem;
   }
   .card-holder{
     width: 100%;

@@ -26,7 +26,7 @@ function App() {
   return(
     <div className='container'>
        <form action="">
-        <h1>Add your notes here</h1>
+        <h1>Add Your Notes</h1>
           <input type="text" placeholder='Enter heading' value={title}
             onChange={(e)=>{
               setTitle(e.target.value);
