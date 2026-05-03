@@ -108,7 +108,8 @@ button:active{
   }
   form{
     width: 100%;
-    margin: 0.8 0;
+    margin: 0.8;
+    margin-left: 0;
   }
   .card-holder{
     width: 100%;
