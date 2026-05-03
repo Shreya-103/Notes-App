@@ -1,10 +1,24 @@
 import { useState } from 'react'
-import './App.css'
+import { useEffect } from 'react';
 
 function App() {
   const [title, setTitle] = useState('');
   const [content, addContent] = useState('');
-  const [task, addTask] = useState([]);
+  const [task, addTask] = useState(()=>{
+     const savedTasks = localStorage.getItem("tasks");
+     return savedTasks ? JSON.parse(savedTasks): [];
+  });
+
+  // useEffect(()=>{
+  //   const savedTasks = localStorage.getItem("tasks");
+  //   if(savedTasks){
+  //     addTask(JSON.parse(savedTasks));
+  //   }
+  // }, []);
+
+  useEffect(()=>{
+    localStorage.setItem("tasks", JSON.stringify(task));
+  }, [task]);
 
   const submitHandler = (e)=>{
     e.preventDefault();
@@ -12,7 +26,6 @@ function App() {
     const newTask = [...task];
     newTask.push({title, content});
     addTask(newTask);
-
     setTitle('');
     addContent('');
   }
@@ -22,7 +35,6 @@ function App() {
     copyTask.splice(idx, 1);
     addTask(copyTask);
   }
-
   return(
     <div className='container'>
        <form action="">
@@ -39,7 +51,6 @@ function App() {
           ></textarea>
           <button onClick={submitHandler}>Add Note</button>
        </form>
-
        <div className='card-holder'>
           {task.map(function(elem, idx){
             return(
