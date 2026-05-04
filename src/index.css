@@ -84,8 +84,9 @@ button:active{
   transform: scale(1.09);
 }
 .card p, .card h3{
-  word-break: break-all;      /* 🔥 strongest breaking */
-  overflow-wrap: anywhere;    /* modern fix */
+  word-break: keep-all;     
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 .card h3{
   font-size: 1.5rem;
