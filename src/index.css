@@ -5,13 +5,13 @@
 body{
   height: 100vh;
   background-color: beige;
-  transition: 0.7s;
+  transition: 0.5s;
 }
 .search-bar{
   display: flex;
   justify-content: space-between;
   width: 100%;
-    transition: 0.7s;
+  transition: 0.5s;
 
 }
 .mood{
@@ -19,7 +19,7 @@ body{
   width: 3rem;
   font-size: 1rem;
   padding: 0.25rem;
-    transition: 0.7s;
+  transition: 0.5s;
 
 }
 .searchBox{
@@ -29,7 +29,7 @@ body{
   border: 2px solid black;
   font-size: 0.85rem;
   display: block;
-    transition: 0.7s;
+  transition: 0.5s;
 
 }
 .container{
@@ -45,7 +45,7 @@ form{
   gap: 1.5rem;
   margin: 3rem;
   width: 50%;
-    transition: 0.7s;
+  transition: 0.5s;
 
 }
 input{
@@ -54,7 +54,7 @@ input{
   margin: 1rem;
   border: none;
   background-color: beige;
-    transition: 0.7s;
+  transition: 0.5s;
 
 
 }
@@ -64,7 +64,7 @@ textarea{
   margin: 0 1rem;
   height: 15rem;
   background-color: beige;
-    transition: 0.7s;
+  transition: 0.5s;
 
   border: none;
 }
@@ -78,7 +78,7 @@ button{
   border: none;
   width: 50%;
   align-self: center;
-    transition: 0.7s;
+  transition: 0.5s;
 
 }
 button:active{
@@ -107,7 +107,7 @@ button:active{
   padding: 1rem;
   position: relative;
   min-width: 0; 
-    transition: 0.7s;
+  transition: 0.5s;
 
 }
 .card h5{
