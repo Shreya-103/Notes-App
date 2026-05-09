@@ -12,6 +12,8 @@ A responsive and user-friendly Notes App built using React that allows users to 
 * ❌ Delete notes instantly
 * 💾 **Persistent storage using localStorage**
 * ⚡ Real-time UI updates (no page reload)
+* 🌙 Dark mode
+* 🔍 Search & filter notes
 * 📱 Responsive design for all screen sizes
 
 ---
@@ -71,8 +73,6 @@ Notes-App/
 ## 🎯 Future Improvements
 
 * ✏️ Edit existing notes
-* 🌙 Dark mode
-* 🔍 Search & filter notes
 * 📌 Pin important notes
 
 
