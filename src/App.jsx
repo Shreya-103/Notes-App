@@ -35,6 +35,25 @@ const searchNote = (e) => {
     copyTask.splice(idx, 1);
     addTask(copyTask);
   }
+
+const [darkMode, setDarkMode] = useState(() => {
+  return JSON.parse(localStorage.getItem("darkMode")) || false;
+});  
+useEffect(() => {
+  localStorage.setItem("darkMode", JSON.stringify(darkMode));
+}, [darkMode]);
+  const toggleMode = () => {
+  setDarkMode(!darkMode);
+};
+
+useEffect(() => {
+  if (darkMode) {
+    document.body.classList.add("dark");
+  } else {
+    document.body.classList.remove("dark");
+  }
+}, [darkMode]);
+
   return(
     <>
     <div className='container'>
@@ -55,7 +74,9 @@ const searchNote = (e) => {
        <div className='card-holder'>
               <div className='search-bar'>
               <input type="text" placeholder='search notes' className='searchBox' onChange={searchNote}/>
-              <button className='mood'>🌙</button>
+              <button className='mood' onClick={toggleMode}>
+  {darkMode ? "☀️" : "🌙"}
+</button>
               </div>
               
           {task.filter((elem) =>

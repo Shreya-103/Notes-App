@@ -5,17 +5,22 @@
 body{
   height: 100vh;
   background-color: beige;
+  transition: 0.7s;
 }
 .search-bar{
   display: flex;
   justify-content: space-between;
   width: 100%;
+    transition: 0.7s;
+
 }
 .mood{
   height: 3rem;
   width: 3rem;
   font-size: 1rem;
   padding: 0.25rem;
+    transition: 0.7s;
+
 }
 .searchBox{
   height:1.3rem;
@@ -24,6 +29,8 @@ body{
   border: 2px solid black;
   font-size: 0.85rem;
   display: block;
+    transition: 0.7s;
+
 }
 .container{
   display: flex;
@@ -38,6 +45,8 @@ form{
   gap: 1.5rem;
   margin: 3rem;
   width: 50%;
+    transition: 0.7s;
+
 }
 input{
   font-size:3rem;
@@ -45,6 +54,8 @@ input{
   margin: 1rem;
   border: none;
   background-color: beige;
+    transition: 0.7s;
+
 
 }
 textarea{
@@ -53,6 +64,7 @@ textarea{
   margin: 0 1rem;
   height: 15rem;
   background-color: beige;
+    transition: 0.7s;
 
   border: none;
 }
@@ -66,6 +78,8 @@ button{
   border: none;
   width: 50%;
   align-self: center;
+    transition: 0.7s;
+
 }
 button:active{
   transform: scale(1.1);
@@ -79,6 +93,8 @@ button:active{
   gap: 2rem;
   /* padding-top: 2rem; */
   margin: 2rem;
+    transition: 0.7s;
+
 }
 
 .card{
@@ -91,6 +107,8 @@ button:active{
   padding: 1rem;
   position: relative;
   min-width: 0; 
+    transition: 0.7s;
+
 }
 .card h5{
   position: absolute;
@@ -140,4 +158,49 @@ button:active{
   .search-bar{
     width: 80%;
   }
+}
+
+.dark{
+  background-color: #121212;
+  color: white;
+}
+
+/* FORM INPUTS */
+.dark input,
+.dark textarea{
+  background-color: #1e1e1e;
+  color: white;
+}
+
+/* SEARCH BOX */
+.dark .searchBox{
+  background-color: #1e1e1e;
+  color: white;
+  border: 2px solid white;
+}
+
+/* CARD */
+.dark .card{
+  background-color: #1f1f1f;
+  color: white;
+}
+
+/* CARD TEXT */
+.dark .card p{
+  color: #cfcfcf;
+}
+
+/* BUTTON */
+.dark button{
+  background-color: #4b7bec;
+}
+
+.dark button:active{
+  background-color: #3867d6;
+}
+
+/* PLACEHOLDER COLOR */
+.dark input::placeholder,
+.dark textarea::placeholder{
+  color: #bdbdbd;
 }
