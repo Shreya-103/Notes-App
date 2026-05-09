@@ -13,7 +13,7 @@ A responsive and user-friendly Notes App built using React that allows users to 
 * 💾 **Persistent storage using localStorage**
 * ⚡ Real-time UI updates (no page reload)
 * 🌙 Dark mode
-* 🔍 Search & filter notes
+* 🔍 Search notes
 * 📱 Responsive design for all screen sizes
 
 ---
