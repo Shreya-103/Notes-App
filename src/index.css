@@ -165,32 +165,30 @@ button:active{
   color: white;
 }
 
-/* FORM INPUTS */
 .dark input,
 .dark textarea{
   background-color: #1e1e1e;
   color: white;
 }
 
-/* SEARCH BOX */
+
 .dark .searchBox{
   background-color: #1e1e1e;
   color: white;
   border: 2px solid white;
 }
 
-/* CARD */
+
 .dark .card{
   background-color: #1f1f1f;
   color: white;
 }
 
-/* CARD TEXT */
+
 .dark .card p{
   color: #cfcfcf;
 }
 
-/* BUTTON */
 .dark button{
   background-color: #4b7bec;
 }
@@ -199,7 +197,6 @@ button:active{
   background-color: #3867d6;
 }
 
-/* PLACEHOLDER COLOR */
 .dark input::placeholder,
 .dark textarea::placeholder{
   color: #bdbdbd;
