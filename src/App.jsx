@@ -75,7 +75,7 @@ useEffect(() => {
               <div className='search-bar'>
               <input type="text" placeholder='search notes' className='searchBox' onChange={searchNote}/>
               <button className='mood' onClick={toggleMode}>
-  {darkMode ? "☀️" : "🌙"}
+  {darkMode ? "🔆" : "🌙"}
 </button>
               </div>
               
