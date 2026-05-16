@@ -24,7 +24,12 @@ const searchNote = (e) => {
     e.preventDefault();
     
     const newTask = [...task];
-    newTask.push({title, content});
+    
+    newTask.push({
+  title,
+  content,
+  pinned: false
+});
     addTask(newTask);
     setTitle('');
     addContent('');
@@ -35,6 +40,14 @@ const searchNote = (e) => {
     copyTask.splice(idx, 1);
     addTask(copyTask);
   }
+  const togglePin = (idx) => {
+  const updatedTask = [...task];
+
+  updatedTask[idx].pinned = !updatedTask[idx].pinned;
+
+  addTask(updatedTask);
+}
+
 
 const [darkMode, setDarkMode] = useState(() => {
   return JSON.parse(localStorage.getItem("darkMode")) || false;
@@ -89,6 +102,9 @@ useEffect(() => {
                 <h5 onClick={ ()=>
                 deleteNote(idx)
                 }>❌</h5>
+                <h5 onClick={() => togglePin(idx)}>
+  {elem.pinned ? "📌" : "📍"}
+</h5>
               <h3>{elem.title}</h3>
               <p>{elem.content}</p>
               </div>
