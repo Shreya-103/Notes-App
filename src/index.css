@@ -121,6 +121,11 @@ button:active{
 .card h5:active{
   transform: scale(1.09);
 }
+.pinn{
+  position: absolute;
+  /* top: 1.5rem; */
+  right: 1rem;
+}
 .card p, .card h3{
   word-break: keep-all;     
   overflow-wrap: break-word;

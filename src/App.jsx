@@ -92,7 +92,8 @@ useEffect(() => {
 </button>
               </div>
               
-          {task.filter((elem) =>
+          {[...task].sort((a, b) => b.pinned - a.pinned)
+  .filter((elem) =>
             elem.title.toLowerCase().includes(search.toLowerCase()) ||
             elem.content.toLowerCase().includes(search.toLowerCase())
   )
@@ -102,9 +103,9 @@ useEffect(() => {
                 <h5 onClick={ ()=>
                 deleteNote(idx)
                 }>❌</h5>
-                <h5 onClick={() => togglePin(idx)}>
+                <p className='pinn' onClick={() => togglePin(idx)}>
   {elem.pinned ? "📌" : "📍"}
-</h5>
+</p>
               <h3>{elem.title}</h3>
               <p>{elem.content}</p>
               </div>
