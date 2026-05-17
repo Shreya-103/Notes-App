@@ -104,7 +104,7 @@ useEffect(() => {
                 deleteNote(idx)
                 }>❌</h5>
                 <p className='pinn' onClick={() => togglePin(idx)}>
-                {elem.pinned ? "📌" : ""}
+                {elem.pinned ? "📌" : "pin"}
                 </p>
               <h3>{elem.title}</h3>
               <p>{elem.content}</p>
