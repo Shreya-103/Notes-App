@@ -4,8 +4,6 @@ A responsive and user-friendly Notes App built using React that allows users to 
 
 🔗 **Live Demo:** https://shreya-103.github.io/Notes-App
 
----
-
 ## 🚀 Features
 
 * ➕ Add new notes with title and content
@@ -16,8 +14,6 @@ A responsive and user-friendly Notes App built using React that allows users to 
 * 🔍 Search notes
 * 📱 Responsive design for all screen sizes
 
----
-
 ## 🛠️ Tech Stack
 
 * **Frontend:** React (Vite)
@@ -25,7 +21,6 @@ A responsive and user-friendly Notes App built using React that allows users to 
 * **Storage:** Browser localStorage
 * **Deployment:** GitHub Pages
 
----
 
 ## 📦 Installation & Setup
 
@@ -43,7 +38,6 @@ npm install
 npm run dev
 ```
 
----
 
 ## 📁 Project Structure
 
@@ -58,8 +52,6 @@ Notes-App/
 │── package.json
 ```
 
----
-
 ## 🧩 How It Works
 
 * Users input a **title and content** for notes
@@ -67,8 +59,6 @@ Notes-App/
 * Data is synced with **localStorage**, so notes persist after refresh
 * Each note is rendered dynamically as a card
 * Clicking ❌ deletes the selected note instantly
-
----
 
 ## 🎯 Future Improvements
 
@@ -85,11 +75,3 @@ This project demonstrates:
 * Event handling
 * Data persistence using localStorage
 * Basic responsive UI design
-
----
-
-## 📜 License
-
-This project is open-source and free to use.
-
----
