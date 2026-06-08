@@ -1,207 +1,277 @@
-*{
-  padding:0;
-  margin: 0%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-  height: 100vh;
-  background-color: beige;
-  transition: 0.5s;
-}
-.search-bar{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  transition: 0.5s;
 
+body {
+  background: #faf7f2;
+  min-height: 100vh;
+  transition: 0.4s;
+  font-family: sans-serif;
 }
-.mood{
-  height: 3rem;
-  width: 3rem;
-  font-size: 1rem;
-  padding: 0.25rem;
-  transition: 0.5s;
 
-}
-.searchBox{
-  height:1.3rem;
-  width: 70%;
-  padding: 0.4rem;
-  border: 2px solid black;
-  font-size: 0.85rem;
-  display: block;
-  transition: 0.5s;
-
-}
-.container{
+.container {
   display: flex;
 }
-.container h1{
+
+.container h1 {
+  margin-left: 1rem;
   font-size: 2.5rem;
-  margin-left: 1.5rem;
 }
-form{
+
+form {
+  width: 50%;
+  margin: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin: 3rem;
-  width: 50%;
-  transition: 0.5s;
-
+  gap: 1rem;
 }
-input{
-  font-size:3rem;
-  padding: 0.95rem;
-  margin: 1rem;
+
+input,
+textarea {
   border: none;
-  background-color: beige;
-  transition: 0.5s;
-
-
+  background: #faf7f2;
+  transition: 0.3s;
 }
-textarea{
-  font-size: 1.45rem;
-  padding: 0.95rem;
-  margin: 0 1rem;
-  height: 15rem;
-  background-color: beige;
-  transition: 0.5s;
 
-  border: none;
-}
-button{
-  border-radius: 12px;
-  background-color:#2f5d62;
+form input {
   font-size: 2rem;
-  font-weight: 550;
-  color: aliceblue;
-  padding:0.95rem;
+  padding: 1rem;
+}
+
+form textarea {
+  min-height: 15rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  resize: none;
+}
+
+button {
   border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button {
   width: 50%;
   align-self: center;
-  transition: 0.5s;
-
-}
-button:active{
-  transform: scale(1.1);
-  background-color: #1a5157;
-}
-.card-holder{
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
-  /* padding-top: 2rem; */
-  margin: 2rem;
-    transition: 0.7s;
-
-}
-
-.card{
-  max-height: 15rem;
-  width: 10rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  border-radius: 12px;
-  background-color: white;
   padding: 1rem;
-  position: relative;
-  min-width: 0; 
-  transition: 0.5s;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  background: #2f5d62;
+  color: white;
+}
 
+form button:hover {
+  transform: translateY(-2px);
 }
-.card h5{
-  position: absolute;
-  right:1rem;
-  top: 1rem;
+
+.card-holder {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
 }
-.card h5:hover{
+
+.search-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchBox {
+  width: 75%;
+  padding: 0.8rem;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+}
+
+.mood {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.card {
+  width: 220px;
+  min-height: 180px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 1rem;
+  border-radius: 18px;
+  background: white;
+  position: relative;
   cursor: pointer;
+  transition: 0.3s;
 }
-.card h5:active{
-  transform: scale(1.09);
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
-.pinn{
+
+.card h5 {
   position: absolute;
-  /* top: 1.5rem; */
+  top: 1rem;
   right: 1rem;
 }
-.card p, .card h3{
-  word-break: keep-all;     
-  overflow-wrap: break-word;
-  white-space: normal;
-}
-.card h3{
-  font-size: 1.5rem;
-}
-.card p{
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  color: grey;
-  white-space: pre-wrap;
-  line-height: 1.5; 
-}
-@media(max-width:950px){
-  body{
-    overflow-x: hidden;
-  }
-  .container{
-    display: block;
-    overflow-x: hidden;
-  }
-  form{
-    width: 100%;
-    margin: 0.8rem;
-    margin-left: 0%;
-  }
-  .card-holder{
-    width: 100%;
-    margin: 2rem;
-    /* margin-left: 10%; */
-  }
-  .search-bar{
-    width: 80%;
-  }
+
+.card h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
-.dark{
-  background-color: #121212;
-  color: white;
+.card p {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  color: #666;
+}
+
+.pinn {
+  position: absolute;
+  right: 3rem;
+  top: 0.85rem;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalCard {
+  width: min(90%, 850px);
+  height: 80vh;
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: zoomIn 0.3s ease;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.editTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: transparent;
+}
+
+.editContent {
+  flex: 1;
+  resize: none;
+  font-size: 1.1rem;
+  background: transparent;
+}
+
+.saveBtn {
+  margin-top: 1rem;
+  align-self: flex-end;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  background: #f59e0b;
+  color: #111;
+  font-weight: bold;
+}
+
+.saveBtn:hover {
+  transform: translateY(-2px);
+}
+
+.dark {
+  background: #18181b;
+  color: #fafafa;
 }
 
 .dark input,
-.dark textarea{
-  background-color: #1e1e1e;
+.dark textarea {
+  background: #18181b;
   color: white;
 }
 
-
-.dark .searchBox{
-  background-color: #1e1e1e;
-  color: white;
-  border: 2px solid white;
+.dark .searchBox {
+  border: 2px solid #555;
 }
 
-
-.dark .card{
-  background-color: #1f1f1f;
-  color: white;
+.dark .card {
+  background: #27272a;
 }
 
-
-.dark .card p{
+.dark .card p {
   color: #cfcfcf;
 }
 
-.dark button{
-  background-color: #4b7bec;
+.dark .modalCard {
+  background: #27272a;
 }
 
-.dark button:active{
-  background-color: #3867d6;
+.dark .saveBtn {
+  background: #43ae95;
+  color: black;
 }
 
-.dark input::placeholder,
-.dark textarea::placeholder{
-  color: #bdbdbd;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    flex-direction: column;
+  }
+
+  form {
+    width: auto;
+  }
+
+  .card-holder {
+    margin: 1rem;
+  }
+
+  .searchBox {
+    width: 70%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .modalCard {
+    width: 95%;
+    height: 90vh;
+  }
 }
