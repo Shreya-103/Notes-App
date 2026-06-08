@@ -115,7 +115,7 @@ function App() {
           <div className="search-bar">
             <input
               type="text"
-              placeholder="Search notes..."
+              placeholder=" 🔍 Search notes..."
               className="searchBox"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -126,7 +126,7 @@ function App() {
               className="mood"
               onClick={toggleMode}
             >
-              {darkMode ? "☀️" : "🌙"}
+              {darkMode ? "🔆" : "🌙"}
             </button>
           </div>
 
