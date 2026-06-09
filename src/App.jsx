@@ -6,7 +6,13 @@ function App() {
 
   const [task, setTask] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");
-    return savedTasks ? JSON.parse(savedTasks) : [];
+
+    if (!savedTasks) return [];
+
+    return JSON.parse(savedTasks).map((note, index) => ({
+      id: note.id || `legacy-${Date.now()}-${index}`,
+      ...note,
+    }));
   });
 
   const [search, setSearch] = useState("");
@@ -40,54 +46,76 @@ function App() {
 
     if (!title.trim() || !content.trim()) return;
 
-    const newTask = [
-      ...task,
-      {
-        title,
-        content,
-        pinned: false,
-      },
-    ];
+    const newNote = {
+      id: crypto.randomUUID(),
+      title,
+      content,
+      pinned: false,
+    };
 
-    setTask(newTask);
+    setTask([...task, newNote]);
+
     setTitle("");
     setContent("");
   };
 
-  const deleteNote = (idx) => {
-    const copyTask = [...task];
-    copyTask.splice(idx, 1);
-    setTask(copyTask);
+  const deleteNote = (id) => {
+    setTask((prev) => prev.filter((note) => note.id !== id));
+
+    if (selectedNote === id) {
+      setSelectedNote(null);
+    }
   };
 
-  const togglePin = (idx) => {
-    const updatedTask = [...task];
-    updatedTask[idx].pinned = !updatedTask[idx].pinned;
-    setTask(updatedTask);
+  const togglePin = (id) => {
+    setTask((prev) =>
+      prev.map((note) =>
+        note.id === id
+          ? {
+              ...note,
+              pinned: !note.pinned,
+            }
+          : note
+      )
+    );
   };
 
-  const openNote = (note, idx) => {
-    setSelectedNote(idx);
+  const openNote = (note) => {
+    setSelectedNote(note.id);
     setEditTitle(note.title);
     setEditContent(note.content);
   };
 
   const saveChanges = () => {
-    const updatedTask = [...task];
+    setTask((prev) =>
+      prev.map((note) =>
+        note.id === selectedNote
+          ? {
+              ...note,
+              title: editTitle,
+              content: editContent,
+            }
+          : note
+      )
+    );
 
-    updatedTask[selectedNote] = {
-      ...updatedTask[selectedNote],
-      title: editTitle,
-      content: editContent,
-    };
-
-    setTask(updatedTask);
     setSelectedNote(null);
   };
 
   const toggleMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prev) => !prev);
   };
+
+  const sortedTasks = [...task]
+    .sort((a, b) => {
+      if (a.pinned === b.pinned) return 0;
+      return a.pinned ? -1 : 1;
+    })
+    .filter(
+      (note) =>
+        note.title.toLowerCase().includes(search.toLowerCase()) ||
+        note.content.toLowerCase().includes(search.toLowerCase())
+    );
 
   return (
     <>
@@ -115,7 +143,7 @@ function App() {
           <div className="search-bar">
             <input
               type="text"
-              placeholder=" 🔍 Search notes..."
+              placeholder="🔍 Search notes..."
               className="searchBox"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -130,43 +158,39 @@ function App() {
             </button>
           </div>
 
-          {[...task]
-            .sort((a, b) => b.pinned - a.pinned)
-            .filter(
-              (note) =>
-                note.title.toLowerCase().includes(search.toLowerCase()) ||
-                note.content.toLowerCase().includes(search.toLowerCase())
-            )
-            .map((elem, idx) => (
-              <div
-                key={idx}
-                className="card"
-                onClick={() => openNote(elem, idx)}
+          {sortedTasks.map((elem) => (
+            <div
+              key={elem.id}
+              className="card"
+              onClick={() => openNote(elem)}
+            >
+              <h5
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deleteNote(elem.id);
+                }}
               >
-                <h5 onClick={(e) => {
-                    e.stopPropagation();
-                    deleteNote(idx);
-                  }}
-                > ❌
-                </h5>
+                ❌
+              </h5>
 
-                <p className="pinn" onClick={(e) => {
-                    e.stopPropagation();
-                    togglePin(idx);
-                  }}
-                >
-                  {elem.pinned ? "📌" : "📍"}
-                </p>
+              <p
+                className="pinn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  togglePin(elem.id);
+                }}
+              >
+                {elem.pinned ? "📌" : "📍"}
+              </p>
 
-                <h3>{elem.title}</h3>
-
-                <p>{elem.content}</p>
-              </div>
-            ))}
+              <h3>{elem.title}</h3>
+              <p>{elem.content}</p>
+            </div>
+          ))}
         </div>
       </div>
 
-      {selectedNote !== null && (
+      {selectedNote && (
         <div
           className="modalOverlay"
           onClick={() => setSelectedNote(null)}

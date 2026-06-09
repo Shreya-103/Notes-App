@@ -5,12 +5,8 @@
 }
 
 body {
-  /* background: #faf7f2; */
-  background: linear-gradient(
-    135deg,
-    #ffff,
-    #e2d1c3
-  );
+  overflow: hidden;
+  background: linear-gradient( 100deg, #ffff, #e2d1c3);
   color: black;
   min-height: 100vh;
   transition: 0.4s;
@@ -259,6 +255,9 @@ form button:hover {
 }
 
 @media (max-width: 950px) {
+  body{
+    overflow: hidden;
+  }
   .container {
     flex-direction: column;
   }
@@ -272,7 +271,7 @@ form button:hover {
   }
 
   .searchBox {
-    width: 70%;
+    width: 65%;
   }
 
   .card {
