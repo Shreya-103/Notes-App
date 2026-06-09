@@ -5,7 +5,13 @@
 }
 
 body {
-  background: #faf7f2;
+  /* background: #faf7f2; */
+  background: linear-gradient(
+    135deg,
+    #ffff,
+    #e2d1c3
+  );
+  color: black;
   min-height: 100vh;
   transition: 0.4s;
   font-family: sans-serif;
@@ -31,7 +37,7 @@ form {
 input,
 textarea {
   border: none;
-  background: #faf7f2;
+  background: #ffffff;
   transition: 0.3s;
 }
 
@@ -227,6 +233,9 @@ form button:hover {
 .dark .saveBtn {
   background: #43ae95;
   color: black;
+}
+.dark button{
+  background-color: #2f5d62;
 }
 
 @keyframes fadeIn {

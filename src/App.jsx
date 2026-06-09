@@ -143,18 +143,14 @@ function App() {
                 className="card"
                 onClick={() => openNote(elem, idx)}
               >
-                <h5
-                  onClick={(e) => {
+                <h5 onClick={(e) => {
                     e.stopPropagation();
                     deleteNote(idx);
                   }}
-                >
-                  ❌
+                > ❌
                 </h5>
 
-                <p
-                  className="pinn"
-                  onClick={(e) => {
+                <p className="pinn" onClick={(e) => {
                     e.stopPropagation();
                     togglePin(idx);
                   }}
