@@ -270,7 +270,9 @@ form button:hover {
   .card-holder {
     margin: 1rem;
   }
-
+.search-bar{
+  width: 90%;
+}
   .searchBox {
     width: 65%;
   }
