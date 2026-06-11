@@ -8,6 +8,9 @@ A responsive and user-friendly Notes App built using React that allows users to 
 
 * ➕ Add new notes with title and content
 * ❌ Delete notes instantly
+* ✏️ Edit existing notes
+* 📌 Pin important notes
+* 👀 Full view mode to see notes on clicking card
 * 💾 **Persistent storage using localStorage**
 * ⚡ Real-time UI updates (no page reload)
 * 🌙 Dark mode
@@ -59,19 +62,14 @@ Notes-App/
 * Data is synced with **localStorage**, so notes persist after refresh
 * Each note is rendered dynamically as a card
 * Clicking ❌ deletes the selected note instantly
-
-## 🎯 Future Improvements
-
-* ✏️ Edit existing notes
-* 📌 Pin important notes
-
+* Clicking 📍 pins the note and 📌 unpins it
+* Clicking on card gives you note on full screen and you can edit it too
 
 ## 🙌 Learning Outcomes
-
 This project demonstrates:
 
 * React component structure
 * State management using hooks
 * Event handling
 * Data persistence using localStorage
-* Basic responsive UI design
+* Responsive UI design

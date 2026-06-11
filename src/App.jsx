@@ -72,9 +72,9 @@ function App() {
       prev.map((note) =>
         note.id === id
           ? {
-              ...note,
-              pinned: !note.pinned,
-            }
+            ...note,
+            pinned: !note.pinned,
+          }
           : note
       )
     );
@@ -91,10 +91,10 @@ function App() {
       prev.map((note) =>
         note.id === selectedNote
           ? {
-              ...note,
-              title: editTitle,
-              content: editContent,
-            }
+            ...note,
+            title: editTitle,
+            content: editContent,
+          }
           : note
       )
     );
@@ -110,8 +110,7 @@ function App() {
     .sort((a, b) => {
       if (a.pinned === b.pinned) return 0;
       return a.pinned ? -1 : 1;
-    })
-    .filter(
+    }).filter(
       (note) =>
         note.title.toLowerCase().includes(search.toLowerCase()) ||
         note.content.toLowerCase().includes(search.toLowerCase())
@@ -122,65 +121,35 @@ function App() {
       <div className="container">
         <form onSubmit={submitHandler}>
           <h1>Add Your Notes</h1>
-
-          <input
-            type="text"
-            placeholder="Enter heading"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-
-          <textarea
-            placeholder="Enter your content here"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-          />
-
+          <input type="text" placeholder="Enter heading" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <textarea placeholder="Enter your content here" value={content} onChange={(e) => setContent(e.target.value)} />
           <button type="submit">Add Note</button>
         </form>
 
         <div className="card-holder">
           <div className="search-bar">
-            <input
-              type="text"
-              placeholder="🔍 Search notes..."
-              className="searchBox"
-              value={search}
+            <input type="text" placeholder="🔍 Search notes..." className="searchBox" value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
 
-            <button
-              type="button"
-              className="mood"
-              onClick={toggleMode}
-            >
+            <button type="button" className="mood" onClick={toggleMode} >
               {darkMode ? "🔆" : "🌙"}
             </button>
           </div>
 
           {sortedTasks.map((elem) => (
-            <div
-              key={elem.id}
-              className="card"
-              onClick={() => openNote(elem)}
-            >
-              <h5
-                onClick={(e) => {
-                  e.stopPropagation();
-                  deleteNote(elem.id);
-                }}
-              >
-                ❌
-              </h5>
+            <div key={elem.id} className="card" onClick={() => openNote(elem)} >
+              <h5 onClick={(e) => {
+                e.stopPropagation();
+                deleteNote(elem.id);
+              }}
+              > ❌ </h5>
 
-              <p
-                className="pinn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  togglePin(elem.id);
-                }}
-              >
-                {elem.pinned ? "📌" : "📍"}
+              <p className="pinn" onClick={(e) => {
+                e.stopPropagation();
+                togglePin(elem.id);
+              }}
+              > {elem.pinned ? "📌" : "📍"}
               </p>
 
               <h3>{elem.title}</h3>
@@ -191,39 +160,16 @@ function App() {
       </div>
 
       {selectedNote && (
-        <div
-          className="modalOverlay"
-          onClick={() => setSelectedNote(null)}
-        >
-          <div
-            className="modalCard"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <span
-              className="closeBtn"
-              onClick={() => setSelectedNote(null)}
-            >
-              ✖
-            </span>
+        <div className="modalOverlay" onClick={() => setSelectedNote(null)} >
+          <div className="modalCard" onClick={(e) => e.stopPropagation()} >
+            <span className="closeBtn" onClick={() => setSelectedNote(null)} >  ✖  </span>
 
-            <input
-              className="editTitle"
-              value={editTitle}
-              onChange={(e) => setEditTitle(e.target.value)}
-            />
+            <input className="editTitle" value={editTitle} onChange={(e) => setEditTitle(e.target.value)} />
 
-            <textarea
-              className="editContent"
-              value={editContent}
-              onChange={(e) => setEditContent(e.target.value)}
-            />
+            <textarea className="editContent" value={editContent}
+              onChange={(e) => setEditContent(e.target.value)} />
 
-            <button
-              className="saveBtn"
-              onClick={saveChanges}
-            >
-              Save Changes
-            </button>
+            <button className="saveBtn" onClick={saveChanges} > Save Changes</button>
           </div>
         </div>
       )}
