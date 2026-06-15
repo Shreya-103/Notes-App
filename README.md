@@ -1,6 +1,8 @@
 # 📝 Notes App
 
-A responsive and user-friendly Notes App built using React that allows users to create, manage, and persist notes efficiently. The app uses local storage to save data, ensuring notes remain even after refreshing the page.
+A responsive and user-friendly Notes App built using React that allows users to create, manage, 
+and persist notes efficiently. The app uses local storage to save data, 
+ensuring notes remain even after refreshing the page.
 
 🔗 **Live Demo:** https://shreya-103.github.io/Notes-App
 
